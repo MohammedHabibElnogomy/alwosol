@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>رحلة العبادة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0f6b5c;--g2:#13a08b;--mint:#e3f1ee;--bg:#f2f6f5;--card:#fff;--tx:#12302c;--mut:#6b8681;--ln:#e4ece9;--red:#c0392b;--amb:#b7791f;--ok:#0e8f6f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1b19;--card:#14292a;--tx:#e3f2ef;--mut:#8fb1ab;--ln:#21403d;--mint:#1c3a37;--g:#2bb59d;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Cairo',Tahoma,Arial,sans-serif;max-width:560px;margin-inline:auto;padding:12px 14px 40px}
+nav{display:flex;gap:8px;padding:4px 0 12px}
+nav button{border:0;background:var(--card);color:var(--tx);font:inherit;font-weight:600;border-radius:14px;padding:8px 16px;cursor:pointer}
+nav button.on{background:var(--g);color:#fff}
+h2{margin:6px 0 2px;font-size:28px;font-weight:800}
+.dt{color:var(--mut);font-size:13px;margin-bottom:12px}
+.card{background:var(--card);border-radius:24px;padding:18px;margin-bottom:14px;box-shadow:0 1px 8px rgba(0,0,0,.05)}
+.hello small{color:var(--mut)}
+.hello h3{margin:2px 0;font-size:26px;font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--mint);border-radius:14px;padding:5px 12px;font-size:12px}
+.chip b{margin-inline-start:6px}
+.ring{--p:0;width:130px;height:130px;border-radius:50%;margin:10px auto 0;background:conic-gradient(var(--g2) calc(var(--p)*1%),var(--mint) 0);display:grid;place-items:center}
+.ring div{width:104px;height:104px;border-radius:50%;background:var(--card);display:grid;place-items:center;text-align:center;font-size:12px;color:var(--mut)}
+.ring b{font-size:26px;color:var(--tx);display:block;line-height:1}
+.ttl{display:flex;justify-content:space-between;align-items:center;font-weight:800;margin-bottom:10px}
+.pill{background:var(--mint);border-radius:12px;padding:3px 10px;font-size:12px;font-weight:400}
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.sd{border:1px solid var(--ln);background:var(--card);color:var(--mut);border-radius:16px;padding:6px 0;font:inherit;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
+.sd.on{background:var(--mint);border-color:var(--g2);color:var(--tx)}
+.sd i{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:10px;color:#fff;background:var(--ln)}
+.gh{display:flex;align-items:center;gap:10px;margin:14px 0 8px;color:var(--mut);font-size:12px}
+.gh:after{content:"";flex:1;height:1px;background:var(--ln);order:-1}
+.gh span{background:var(--mint);color:var(--g);border-radius:10px;padding:2px 12px;font-weight:700}
+.it{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--ln);border-radius:16px;margin-bottom:8px;cursor:pointer;user-select:none;background:var(--card)}
+.it.on{background:var(--mint);border-color:var(--g2)}
+.ic{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 5px 12px rgba(0,0,0,.18)}.ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.tx{flex:1}.tx b{display:block;font-size:14px;font-weight:600}.tx small{color:var(--mut);font-size:11px}
+.pt{font-size:12px;color:var(--mut);width:28px}
+.cb{width:26px;height:26px;border-radius:9px;border:2px solid var(--ln);display:grid;place-items:center;color:#fff;font-size:15px;flex:none}
+.it.on .cb{background:var(--g);border-color:var(--g)}
+.bars{display:flex;align-items:flex-end;gap:4px;height:110px}
+.bars div{flex:1;border-radius:6px 6px 0 0;background:var(--g2);min-height:3px}
+.bl{display:flex;gap:4px;font-size:9px;color:var(--mut);text-align:center;margin-top:4px}.bl span{flex:1}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.st div{background:var(--mint);border-radius:16px;padding:12px;text-align:center;font-size:12px;color:var(--mut)}
+.st b{display:block;font-size:22px;color:var(--g)}
+.rw{margin:8px 0}.rw div{height:8px;border-radius:8px;background:var(--mint);overflow:hidden;margin-top:4px}.rw i{display:block;height:100%;background:var(--g2)}
+.rw span{font-size:13px;display:flex;justify-content:space-between}
+input{width:100%;font:inherit;padding:10px 14px;border-radius:14px;border:1px solid var(--ln);background:var(--card);color:var(--tx)}
+.btn{width:100%;margin-top:10px;border:0;border-radius:14px;padding:10px;font:inherit;font-weight:600;cursor:pointer;background:var(--g);color:#fff}
+.btn.r{background:var(--mint);color:var(--red)}
+body{padding-bottom:110px}
+h2{background:linear-gradient(90deg,var(--g),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.card{border:1px solid var(--ln)}
+.hello{background:radial-gradient(circle at 15% 0%,#2fc5ad 0,transparent 45%),linear-gradient(135deg,#0a4d43,#118a78);color:#fff;position:relative;overflow:hidden;box-shadow:0 14px 32px rgba(15,107,92,.35);border:0}
+.hello:before,.hello:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.14)}
+.hello:before{width:220px;height:220px;left:-70px;top:-70px}
+.hello:after{width:300px;height:300px;right:-120px;bottom:-170px}
+.hello>*{position:relative;z-index:1}
+.hello small{color:rgba(255,255,255,.78)}
+.hello .chip{background:rgba(255,255,255,.15);backdrop-filter:blur(6px)}
+.hello .ring{width:140px;height:140px;background:conic-gradient(#ffe08a calc(var(--p)*1%),rgba(255,255,255,.2) 0);box-shadow:0 0 34px rgba(255,224,138,.28)}
+.hello .ring div{width:112px;height:112px;background:#0c594e;color:#cfece6}
+.hello .ring b{color:#fff;font-size:30px}
+nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));width:min(92vw,420px);z-index:20;gap:4px;padding:6px;background:var(--card);border-radius:26px;box-shadow:0 10px 34px rgba(0,0,0,.2);border:1px solid var(--ln)}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px;border-radius:20px;font-size:11px;background:transparent;color:var(--mut);transition:.2s}
+nav button.on{background:linear-gradient(135deg,#0f6b5c,#13a08b);color:#fff;box-shadow:0 6px 16px rgba(19,160,139,.45)}
+nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.it{transition:transform .15s,background .2s;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.it:active{transform:scale(.97)}
+.it.on .tx b{opacity:.65}
+.it.on .ic{box-shadow:0 5px 14px rgba(19,160,139,.4)}
+.cb{transition:.2s}
+@keyframes pop{50%{transform:scale(1.35)}}
+.gh span{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff}
+.pt{font-weight:800;color:var(--g)}
+.hd{font-size:11px;line-height:1.9;color:rgba(255,255,255,.85);margin:8px 0 2px;padding-top:8px;border-top:1px solid rgba(255,255,255,.2)}
+.hello h3{font-size:22px}
+.sd.on{box-shadow:0 4px 14px rgba(19,160,139,.28)}
+.pill{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff}
+.strip{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 8px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.sd{flex:none;width:56px;scroll-snap-align:center}
+.sd em{font-style:normal;font-size:10px}
+.sd u{text-decoration:none;font-size:17px;font-weight:800;color:var(--tx)}
+.sd.td{border-color:var(--g2)}
+.sd:disabled{opacity:.45}
+.mh{display:flex;justify-content:space-between;align-items:center;font-weight:800;margin-bottom:8px}
+.mh button{border:0;background:var(--mint);color:var(--g);width:36px;height:36px;border-radius:12px;font-size:18px;cursor:pointer}
+.mh button:disabled{opacity:.3}
+.cb{position:relative;overflow:visible}
+.cb.pop{animation:pop .45s}
+.it.flash{animation:fl .7s}
+@keyframes fl{0%{box-shadow:0 0 0 0 rgba(19,160,139,.6)}100%{box-shadow:0 0 0 18px rgba(19,160,139,0)}}
+.pa{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;pointer-events:none;animation:pa .7s ease-out forwards}
+@keyframes pa{from{transform:translate(-50%,-50%) scale(1);opacity:1}to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.2);opacity:0}}
+.seg{display:flex;background:var(--mint);border-radius:16px;padding:4px;margin-bottom:12px}
+.seg button{flex:1;border:0;background:transparent;font:inherit;font-weight:600;color:var(--mut);padding:8px;border-radius:12px;cursor:pointer}
+.seg button.on{background:var(--card);color:var(--g);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.fc p{margin:8px 0;font-size:13px;line-height:1.8}
+.fr{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 12px;border-radius:12px;background:var(--mint);margin:6px 0;font-size:13px}
+.fr b{color:var(--red);font-size:11px;font-weight:600}
+.tip{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;border-radius:14px;padding:10px 12px}
+.bars{height:110px}
+.bl span{overflow:hidden}
+.sd{width:46px;padding:5px 0;gap:3px;border-radius:14px}
+.sd i{width:22px;height:22px;font-size:9px}
+.sd u{font-size:15px}
+.sd em{font-size:9px}
+.strip{padding:2px 2px 4px}
+.mh{margin-bottom:4px}
+.mh button{width:30px;height:30px}
+</style>
+</head>
+<body>
+<nav id="nav"></nav>
+<div id="app"></div>
+<script>
+var DN=['سبت','أحد','إثنين','ثلاثاء','أربعاء','خميس','جمعة'];
+var G=[
+['فرض',[['pr','','إدراك تكبيرة الإحرام','5 صلوات',5]]],
+['السنن',[['rw','','السنن الرواتب','10 ركعات',8],['qi','','قيام الليل والوتر','1 قيام',4],['du','','صلاة الضحى','2 ركعة',2]]],
+['طلب العلم',[['ilm','','طلب العلم','ساعتان',5]]],
+['صيام',[['fa','','صيام الإثنين أو الخميس','1 يوم · أسبوعي',5,1]]],
+['ذكر',[['a1','','أذكار الصباح','1 مرة',2],['a2','','أذكار المساء','1 مرة',2],['a3','','أذكار النوم','1 مرة',1],['a4','','أذكار الاستيقاظ','1 مرة',1],['a5','','الصلاة على النبي ﷺ (100)','100 مرة',3],['a6','','الاستغفار (100)','100 مرة',3],['a7','','الباقيات الصالحات (100)','100 مرة',3]]],
+['قرآن',[['qu','','ورد القرآن (حزبان)','2 حزب',8]]],
+['دعاء',[['dd','','ورد الدعاء','1 مرة',2]]],
+['صدقة',[['sa','','صدقة أسبوعية','1 مرة · أسبوعي',4,1]]]
+];
+var ITEMS=[];G.forEach(function(g){g[1].forEach(function(x){ITEMS.push({id:x[0],g:g[0],ic:x[1],n:x[2],sub:x[3],p:x[4],wk:!!x[5]})})});
+function ic(p){return '<svg viewBox="0 0 24 24">'+p+'</svg>'}
+var P={ilm:'<path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/>',rug:'<rect x="6" y="3" width="12" height="18" rx="1.5"/><path d="M6 7h12M6 17h12M12 9.5a2.5 2.5 0 0 1 0 5"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',cloudsun:'<circle cx="8" cy="8" r="2.5"/><path d="M8 2.5V4M2.5 8H4M4 4l1 1M12 4l-1 1M9 20h8a3.5 3.5 0 0 0 0-7 5 5 0 0 0-9.6 1.2A3 3 0 0 0 9 20z"/>',star:'<path d="M11 3l1.8 4.2L17 9l-4.2 1.8L11 15l-1.8-4.2L5 9l4.2-1.8zM19 14l.8 1.7 1.7.8-1.7.8L19 19l-.8-1.7-1.7-.8 1.7-.8z"/>',coffee:'<path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10h2a2.5 2.5 0 0 1 0 5h-2M8 3v3M12 3v3"/>',hills:'<path d="M3 20h18M5 20c1-5 4-7 7-7s6 2 7 7M16 3.5a3 3 0 1 0 3 4 2.5 2.5 0 0 1-3-4z"/>',sunrise:'<path d="M3 19h18M7 19a5 5 0 0 1 10 0M12 5v4M5.6 10.6L7 12M18.4 10.6L17 12"/>',sunset:'<path d="M3 19h18M7 19a5 5 0 0 1 10 0M12 4v5M9.5 6.5L12 9l2.5-2.5"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',moon:'<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',mosque:'<path d="M3 21h18M5 21v-6h14v6M8 15a4 4 0 0 1 8 0M12 4v4M12 4l1.5 1.5"/><path d="M19 15V9M19 9l-1 1.5h2z"/>',duha:'<path d="M3 20h18M7 20a5 5 0 0 1 10 0M12 4v2M4.2 8l1.4 1.4M19.8 8l-1.4 1.4M2 15h2M20 15h2"/>',qiyam:'<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M17 3v4M15 5h4"/>',leaf:'<path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19c3-4 6-7 10-9"/>',bed:'<path d="M3 19V7M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11.5" r="1.6"/>',alarm:'<circle cx="12" cy="13" r="7"/><path d="M12 9v4l2.5 2M5 4L2.5 6.5M19 4l2.5 2.5"/>',heart:'<path d="M12 20s-7-4.5-9-9.5C1.7 6.5 5 4 8 5.5c1.6.8 3 2.5 4 3.5 1-1 2.4-2.7 4-3.5 3-1.5 6.3 1 5 5C19 15.5 12 20 12 20z"/>',refresh:'<path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/>',beads:'<circle cx="12" cy="4.5" r="2"/><circle cx="18.5" cy="9.5" r="2"/><circle cx="16" cy="17" r="2"/><circle cx="8" cy="17" r="2"/><circle cx="5.5" cy="9.5" r="2"/>',book:'<path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2zM12 6v14"/>',spark:'<path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2zM19 16v4M17 18h4"/>',gift:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8S10 3 7.5 4.5 9 8 12 8zm0 0s2-5 4.5-3.5S15 8 12 8z"/>'};
+var SV={pr:ic(P.mosque),rw:ic(P.rug),qi:ic(P.star),du:ic(P.sun),ilm:ic(P.ilm),fa:ic(P.leaf),a1:ic(P.coffee),a2:ic(P.hills),a3:ic(P.bed),a4:ic(P.alarm),a5:ic(P.heart),a6:ic(P.refresh),a7:ic(P.beads),qu:ic(P.book),dd:ic(P.spark),sa:ic(P.gift)};
+var GC={'فرض':['#0f6b5c','#2fc5ad'],'السنن':['#6d4bd1','#9b7bf0'],'طلب العلم':['#0e7490','#22b8cf'],'صيام':['#2f9e44','#69db7c'],'ذكر':['#d9822b','#f2b84b'],'قرآن':['#1c7ed6','#4dabf7'],'دعاء':['#c2255c','#f06595'],'صدقة':['#e8590c','#ffa94d']};
+var NI=['<svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg>','<svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>'];
+var BASE=ITEMS.filter(function(x){return !x.wk}).reduce(function(a,x){return a+x.p},0);
+var S={d:{},name:''};try{var r=localStorage.getItem('ibadat2');if(r)S=JSON.parse(r)}catch(e){}
+function save(){try{localStorage.setItem('ibadat2',JSON.stringify(S))}catch(e){}}
+function key(dt){var m=dt.getMonth()+1,d=dt.getDate();return dt.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(d<10?'0':'')+d}
+function addD(dt,n){var x=new Date(dt);x.setDate(x.getDate()+n);return x}
+var TODAY=new Date();TODAY.setHours(12,0,0,0);
+var sel=key(TODAY),tab=0;
+function got(k){return S.d[k]||{}}
+function pts(k,all){var g=got(k),t=0;ITEMS.forEach(function(x){if(g[x.id]&&(all||!x.wk))t+=x.p});return t}
+function cnt(k){var g=got(k),c=0;ITEMS.forEach(function(x){if(g[x.id])c++});return c}
+function pct(k){return Math.min(100,Math.round(pts(k,false)*100/BASE))}
+function weekStart(){return addD(TODAY,-((TODAY.getDay()+1)%7))}
+function streak(){var s=0,d=new Date(TODAY);if(!cnt(key(d)))d=addD(d,-1);while(cnt(key(d))){s++;d=addD(d,-1)}return s}
+function best(){var ks=Object.keys(S.d).filter(function(k){return cnt(k)}).sort(),b=0,c=0,p=null;ks.forEach(function(k){var dt=new Date(k+'T12:00:00');c=(p&&key(addD(p,1))==k)?c+1:1;p=dt;if(c>b)b=c});return b}
+function col(p){return p<40?'var(--red)':p<70?'var(--amb)':'var(--ok)'}
+function $(h){return h}
+var rep=0;
+function wsOf(d){return addD(d,-((d.getDay()+1)%7))}
+function dOf(k){return new Date(k+'T12:00:00')}
+function mName(d){return d.toLocaleDateString('ar-u-nu-latn',{month:'long',year:'numeric'})}
+function range(a,b){var r=[],d=new Date(a);while(d<=b&&d<=TODAY){r.push(key(d));d=addD(d,1)}return r}
+function stats(ks){
+ var N=ks.length,W=Math.ceil(N/7),it=[],gs={},pp=0,sm=0,act=0;
+ ITEMS.forEach(function(x){var e=(x.wk&&N>1)?W:N,dn=0;ks.forEach(function(k){if(got(k)[x.id])dn++});dn=Math.min(dn,e);it.push({x:x,e:e,dn:dn,lost:(e-dn)*x.p});var g=gs[x.g]=gs[x.g]||{e:0,dn:0};g.e+=e;g.dn+=dn});
+ ks.forEach(function(k){pp+=pts(k,true);sm+=pct(k);if(cnt(k))act++});
+ return{N:N,it:it,gs:gs,pts:pp,avg:N?Math.round(sm/N):0,act:act}}
+function focus(st,lab){
+ var h='<div class="card fc"><div class="ttl">التوصية</div>';
+ if(!st.N||!st.act)return h+'<p>سجّل عباداتك وهتظهرلك التوصية هنا.</p></div>';
+ var low=st.it.filter(function(o){return o.lost>0}).sort(function(a,b){return b.lost-a.lost}).slice(0,3);
+ if(!low.length)return h+'<p>ما شاء الله، ملتزم بكل البنود '+lab+'. كمّل كده.</p></div>';
+ if(st.N==1){h+='<p>لسه باقي عليك:</p>';low.forEach(function(o){h+='<div class="fr"><span>'+o.x.n+'</span></div>'})}
+ else{h+='<p>ركّز على البنود دي '+lab+':</p>';low.forEach(function(o){h+='<div class="fr"><span>'+o.x.n+'</span><b>فاتتك '+(o.e-o.dn)+' مرة</b></div>'})}
+ return h+'<p class="tip">ابدأ بـ «'+low[0].x.n+'»'+(st.N==1?' الأول.':'، هي أكتر بند بيأثر على نسبتك.')+'</p></div>'}
+function reports(){
+ var ds=dOf(sel),ks,lab,y=ds.getFullYear(),m=ds.getMonth();
+ if(rep==0){ks=[sel];lab=sel==key(TODAY)?'النهاردة':'في اليوم ده'}
+ else if(rep==1){var w=wsOf(ds);ks=range(w,addD(w,6));lab='الأسبوع ده'}
+ else{ks=range(new Date(y,m,1,12),new Date(y,m+1,0,12));lab='الشهر ده'}
+ var st=stats(ks),h='<h2>تقاريري</h2><div class="seg">';
+ ['يومي','أسبوعي','شهري'].forEach(function(n,i){h+='<button data-r="'+i+'" class="'+(i==rep?'on':'')+'">'+n+'</button>'});
+ h+='</div><div class="card"><div class="st"><div>'+(rep?'متوسط النسبة':'نسبة اليوم')+'<b>'+st.avg+'%</b></div><div>النقاط<b>'+st.pts+'</b></div>'
+ +(rep?'<div>أيام فيها نشاط<b>'+st.act+' من '+st.N+'</b></div>':'<div>بنود مكتملة<b>'+cnt(sel)+' من '+ITEMS.length+'</b></div>')+'<div>أيام متتالية<b>'+streak()+'</b></div></div></div>';
+ if(rep){var bs='',bl='';ks.forEach(function(k){var p=pct(k);bs+='<div style="height:'+Math.max(3,p)+'%;background:'+(cnt(k)?col(p):'var(--ln)')+'"></div>';bl+='<span>'+dOf(k).getDate()+'</span>'});
+  h+='<div class="card"><div class="ttl">النسبة يوم بيوم'+(rep==2?'<span class="pill">'+mName(ds)+'</span>':'')+'</div><div class="bars">'+bs+'</div><div class="bl">'+bl+'</div></div>'}
+ h+='<div class="card"><div class="ttl">الالتزام حسب القسم</div>';
+ G.forEach(function(g){var s=st.gs[g[0]],q=s&&s.e?Math.round(s.dn*100/s.e):0;h+='<div class="rw"><span>'+g[0]+'<b>'+q+'%</b></span><div><i style="width:'+q+'%;background:'+col(q)+'"></i></div></div>'});
+ return h+'</div>'+focus(st,lab)}
+function home(){
+ var sd=dOf(sel),Y=sd.getFullYear(),M=sd.getMonth(),n=new Date(Y,M+1,0).getDate(),strip='',wp=0,i,w0=wsOf(sd);
+ for(i=0;i<7;i++)wp+=pts(key(addD(w0,i)),true);
+ for(i=1;i<=n;i++){var d=new Date(Y,M,i,12),k=key(d),p=pct(k);
+  strip+='<button class="sd'+(k==sel?' on':'')+(k==key(TODAY)?' td':'')+'" data-k="'+k+'"'+(d>TODAY?' disabled':'')+'><em>'+DN[(d.getDay()+1)%7]+'</em><u>'+i+'</u><i style="background:'+(cnt(k)?col(p):'var(--ln)')+'">'+(cnt(k)?p:'·')+'</i></button>'}
+ var isT=sel==key(TODAY),p=pct(sel),g=got(sel),nOff=(Y>TODAY.getFullYear()||(Y==TODAY.getFullYear()&&M>=TODAY.getMonth()));
+ var lbl=sd.toLocaleDateString('ar-u-nu-latn',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ var h='<h2>رحلة العبادة</h2><div class="dt">'+lbl+'</div>';
+ h+='<div class="card hello"><small>أهلاً</small><h3>'+(S.name||'يا صديقي')+' 🌿</h3><p class="hd">قال الله تعالى: «وَمَنْ تَقَرَّبَ إِلَيَّ شِبْرًا تَقَرَّبْتُ إِلَيْهِ ذِرَاعًا، وَمَنْ تَقَرَّبَ إِلَيَّ ذِرَاعًا تَقَرَّبْتُ مِنْهُ بَاعًا، وَمَنْ أَتَانِي يَمْشِي أَتَيْتُهُ هَرْوَلَةً» — حديث قدسي، متفق عليه</p>'
+ +'<div class="chips"><span class="chip">نقاط الأسبوع<b>'+wp+'</b></span><span class="chip">أيام متتالية<b>'+streak()+'</b></span><span class="chip">بنود '+(isT?'النهاردة':'اليوم')+'<b>'+cnt(sel)+' من '+ITEMS.length+'</b></span></div>'
+ +'<div class="ring" style="--p:'+p+'"><div><span><b>'+p+'%</b>'+(isT?'النهاردة':'اليوم')+'</span></div></div></div>';
+ h+='<div class="card"><div class="mh"><button id="mp">→</button><span>'+mName(sd)+'</span><button id="mn"'+(nOff?' disabled':'')+'>←</button></div><div class="strip" id="strip">'+strip+'</div></div>';
+ h+='<div class="card"><div class="ttl">تسجيل '+(isT?'النهاردة':'اليوم')+'<span class="pill">'+pts(sel,false)+' من '+BASE+' نقطة</span></div><div id="list">';
+ var cur='';ITEMS.forEach(function(x){if(x.g!=cur){cur=x.g;h+='<div class="gh"><span>'+x.g+'</span></div>'}
+  h+='<div class="it'+(g[x.id]?' on':'')+'" data-i="'+x.id+'"><div class="cb">'+(g[x.id]?'✓':'')+'</div><div class="tx"><b>'+x.n+'</b><small>'+x.sub+'</small></div><div class="ic" style="--a:'+GC[x.g][0]+';--b:'+GC[x.g][1]+'">'+SV[x.id]+'</div><div class="pt">+'+x.p+'</div></div>'});
+ return h+'</div></div>'}
+function shift(n){var d=dOf(sel),t=new Date(d.getFullYear(),d.getMonth()+n,1,12),tm=new Date(TODAY.getFullYear(),TODAY.getMonth(),1,12);if(t>tm)return;sel=(t.getFullYear()==TODAY.getFullYear()&&t.getMonth()==TODAY.getMonth())?key(TODAY):key(t);render()}
+function fx(id){var r=document.querySelector('.it[data-i="'+id+'"]');if(!r)return;var c=r.querySelector('.cb'),a=GC[ITEMS.filter(function(x){return x.id==id})[0].g];
+ r.classList.add('flash');c.classList.add('pop');
+ for(var i=0;i<10;i++){var s=document.createElement('span'),an=i*36*Math.PI/180,L=30+Math.random()*16;s.className='pa';s.style.cssText='--dx:'+Math.cos(an)*L+'px;--dy:'+Math.sin(an)*L+'px;background:'+(i%2?a[0]:a[1]);c.appendChild(s)}
+ setTimeout(function(){r.classList.remove('flash');c.classList.remove('pop');c.querySelectorAll('.pa').forEach(function(s){s.remove()})},800)}
+function render(){
+ var nv=document.getElementById('nav');nv.innerHTML='';
+ ['الرئيسية','تقاريري','بروفايلي'].forEach(function(n,i){var b=document.createElement('button');b.innerHTML=NI[i]+'<span>'+n+'</span>';if(i==tab)b.className='on';b.onclick=function(){tab=i;render();window.scrollTo(0,0)};nv.appendChild(b)});
+ var a=document.getElementById('app');a.innerHTML=tab==0?home():tab==1?reports():profile();
+ if(tab==0){var st=document.getElementById('strip');
+  st.onclick=function(e){var b=e.target.closest('.sd');if(b&&!b.disabled){sel=b.dataset.k;render()}};
+  document.getElementById('mp').onclick=function(){shift(-1)};document.getElementById('mn').onclick=function(){shift(1)};
+  var on=st.querySelector('.sd.on');if(on)on.scrollIntoView({inline:'center',block:'nearest'});
+  document.getElementById('list').onclick=function(e){var r=e.target.closest('.it');if(!r)return;var id=r.dataset.i;S.d[sel]=S.d[sel]||{};var v=S.d[sel][id]=!S.d[sel][id];save();var y=window.scrollY;render();window.scrollTo(0,y);if(v)fx(id)}}
+ if(tab==1)a.querySelector('.seg').onclick=function(e){var b=e.target.closest('button');if(b){rep=+b.dataset.r;render()}};
+ if(tab==2){document.getElementById('nm').oninput=function(){S.name=this.value;save()};document.getElementById('rst').onclick=function(){if(confirm('مسح كل البيانات؟')){S.d={};save();render()}}}
+}
+function profile(){return '<h2>بروفايلي</h2><div class="dt">بياناتك محفوظة على جهازك</div><div class="card"><div class="ttl">اسمك</div><input id="nm" placeholder="اكتب اسمك" value="'+(S.name||'').replace(/"/g,'&quot;')+'"><button class="btn r" id="rst">مسح كل البيانات</button></div>'}
+if(!S.name){S.name='محمد حبيب محمود النجومى';save()}
+render();
+</script>
+</body>
+</html>
